@@ -28,7 +28,7 @@ const ARTICLES = [
     id: 'cnc-automation',
     title: 'Ứng dụng Laser Fiber trong dây chuyền tự động hóa CNC 4.0',
     description: 'Tích hợp PLC Mitsubishi và cánh tay Robot công nghiệp vào quy trình cắt laser giúp tối ưu hóa 200% năng suất sản xuất.',
-    image: '/assets/images/products/f-sol-robot-cell.avif',
+    image: '/assets/images/products/regenerated_image_1777802498855.png',
     content: 'Xu hướng Smart Factory yêu cầu kết nối vạn vật. Hệ thống laser của chúng tôi tích hợp giao thức EtherCAT, hỗ trợ xuất dữ liệu thời gian thực tới hệ thống quản lý MES.',
   }
 ];

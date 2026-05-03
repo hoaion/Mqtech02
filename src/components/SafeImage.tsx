@@ -26,6 +26,7 @@ export const SafeImage = ({ src, alt, className, priority = false, ...props }: S
     '/assets/images/products/f-mark-mopa-100.avif': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
     '/assets/images/products/home-hero.avif': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000',
     '/assets/images/products/tech-fiber-vs-co2.avif': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/regenerated_image_1777802498855.png': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
   };
 
   const currentSrc = retryWithFallback && remoteFallbacks[src] ? remoteFallbacks[src] : src;

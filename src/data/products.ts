@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: 'PRO-CUT G3 Ultra 12000W',
     tagline: 'Sức mạnh cắt thép tấm siêu dày với nguồn IPG.',
     description: 'Thiết bị chuyên dụng cho ngành đóng tàu và kết cấu thép nặng. Khả năng cắt thép carbon lên đến 40mm.',
-    image: '/assets/images/products/f-cut-pro-12kw.avif',
+    image: '/assets/images/products/regenerated_image_1777802129868.png',
     price: '2,450,000,000đ',
     brand_context: 'IPG Germany / CypCut',
     specs: [

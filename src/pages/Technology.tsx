@@ -8,7 +8,7 @@ const ARTICLES = [
     id: 'fiber-vs-co2',
     title: 'Nguyên lý nguồn Laser Fiber & Ưu điểm vượt trội so với Laser CO2',
     description: 'Tại sao Fiber Laser đang dần thay thế hoàn toàn công nghệ CO2 trong ngành gia công kim loại tấm? Phân tích hiệu suất và chi phí vận hành.',
-    image: '/assets/images/products/tech-fiber-vs-co2.webp',
+    image: '/assets/images/products/tech-fiber-vs-co2.avif',
     content: 'Fiber Laser sử dụng sợi quang học pha tạp để khuếch đại ánh sáng, tạo ra bước sóng khoảng 1064nm. So với CO2 (10600nm), tia laser Fiber dễ dàng hấp thụ bởi kim loại hơn, mang lại tốc độ cắt nhanh gấp 3-4 lần cho các độ dày mỏng và trung bình.',
     specs: [
       { feature: 'Bước sóng', fiber: '1,064 nm', co2: '10,600 nm' },
@@ -21,14 +21,14 @@ const ARTICLES = [
     id: 'reflective-materials',
     title: 'Kỹ thuật cắt Laser Fiber cho vật liệu phản quang (Nhôm, Đồng)',
     description: 'Cắt đồng đỏ và nhôm đòi hỏi kỹ thuật kiểm soát phản xạ ngược để bảo vệ nguồn laser và đảm bảo mạch cắt mịn đẹp.',
-    image: '/assets/images/products/f-cut-v3-basic.webp',
+    image: '/assets/images/products/f-cut-v3-basic.avif',
     content: 'Sử dụng đầu cắt Precitec tích hợp cảm biến bảo vệ và nguồn laser chống phản xạ cao (IPG/Raycus Pro). Kỹ thuật cắt bằng khí Nitơ áp suất cao giúp loại bỏ bavia và giữ cho bề mặt vật liệu sáng bóng.',
   },
   {
     id: 'cnc-automation',
     title: 'Ứng dụng Laser Fiber trong dây chuyền tự động hóa CNC 4.0',
     description: 'Tích hợp PLC Mitsubishi và cánh tay Robot công nghiệp vào quy trình cắt laser giúp tối ưu hóa 200% năng suất sản xuất.',
-    image: '/assets/images/products/f-sol-robot-cell.webp',
+    image: '/assets/images/products/f-sol-robot-cell.avif',
     content: 'Xu hướng Smart Factory yêu cầu kết nối vạn vật. Hệ thống laser của chúng tôi tích hợp giao thức EtherCAT, hỗ trợ xuất dữ liệu thời gian thực tới hệ thống quản lý MES.',
   }
 ];

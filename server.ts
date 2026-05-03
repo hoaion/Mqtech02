@@ -19,7 +19,7 @@ async function startServer() {
     fs.mkdirSync(uploadDir, { recursive: true });
   }
 
-  // API Route cho Sideloading (SOP Implementation)
+  // API Route cho Sideloading (SOP Implementation - Enhanced with Validation)
   app.post("/api/sideload-image", express.json(), async (req, res) => {
     const { imageUrl, fileName } = req.body;
     
@@ -28,8 +28,7 @@ async function startServer() {
     }
 
     try {
-      const outputName = `${fileName}.webp`;
-      const filePath = path.join(uploadDir, outputName);
+      const uploadPath = path.join(uploadDir, `${fileName}.avif`);
 
       // Fetch image
       const response = await axios({
@@ -39,20 +38,24 @@ async function startServer() {
       });
 
       const buffer = Buffer.from(response.data);
+      const image = sharp(buffer);
+      
+      // VALIDATION: Kiểm tra metadata để xác nhận ảnh không lỗi/hỏng
+      const metadata = await image.metadata();
+      if (!metadata) {
+        throw new Error("Invalid or corrupted image source.");
+      }
 
-      // Xử lý nén và chuyển đổi sang WebP
-      const optimizedBuffer = await sharp(buffer)
-        .webp({ quality: 80 })
-        .toBuffer();
+      // CONVERSION: Chuyển đổi sang AVIF (High compression)
+      await image
+        .avif({ quality: 65 })
+        .toFile(uploadPath);
 
-      // Lưu vào thư mục public
-      fs.writeFileSync(filePath, optimizedBuffer);
-
-      console.log(`[Sideload] Saved: ${outputName}`);
+      console.log(`[Sideload] Optimized & Saved AVIF: ${fileName}.avif`);
       
       return res.json({ 
         success: true, 
-        localUrl: `/assets/images/products/${outputName}` 
+        localUrl: `/assets/images/products/${fileName}.avif` 
       });
     } catch (err: any) {
       console.error(`[Sideload Error] ${err.message}`);

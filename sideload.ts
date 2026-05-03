@@ -24,7 +24,7 @@ if (!fs.existsSync(TARGET_DIR)) {
 }
 
 async function downloadAndOptimize(url: string, id: string) {
-  const outputName = `${id}.webp`;
+  const outputName = `${id}.avif`;
   const filePath = path.join(TARGET_DIR, outputName);
 
   try {
@@ -35,12 +35,20 @@ async function downloadAndOptimize(url: string, id: string) {
     });
 
     const buffer = Buffer.from(response.data);
+    const image = sharp(buffer);
     
-    await sharp(buffer)
-      .webp({ quality: 80 })
+    // VALIDATION
+    const metadata = await image.metadata();
+    if (!metadata) {
+      throw new Error("Invalid image source");
+    }
+    
+    // CONVERSION TO AVIF
+    await image
+      .avif({ quality: 65 })
       .toFile(filePath);
 
-    console.log(`Successfully sideloaded: ${outputName}`);
+    console.log(`Successfully sideloaded AVIF: ${outputName}`);
   } catch (error: any) {
     console.error(`Failed to sideload ${id}: ${error.message}`);
   }

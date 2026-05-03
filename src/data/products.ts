@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     name: 'F-CUT V3 Elite 3000W',
     tagline: 'Tiêu chuẩn vàng cho xưởng quảng cáo và cơ khí vừa.',
     description: 'Sử dụng nguồn Raycus công suất 3kW, hệ thống điều khiển CypCut thân thiện. Tốc độ cắt thép 10mm đạt 3.5m/phút.',
-    image: '/assets/images/products/f-cut-v3-basic.webp',
+    image: '/assets/images/products/f-cut-v3-basic.avif',
     price: '750,000,000đ',
     brand_context: 'Raycus / CypCut',
     specs: [
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: 'PRO-CUT G3 Ultra 12000W',
     tagline: 'Sức mạnh cắt thép tấm siêu dày với nguồn IPG.',
     description: 'Thiết bị chuyên dụng cho ngành đóng tàu và kết cấu thép nặng. Khả năng cắt thép carbon lên đến 40mm.',
-    image: '/assets/images/products/f-cut-pro-12kw.webp',
+    image: '/assets/images/products/f-cut-pro-12kw.avif',
     price: '2,450,000,000đ',
     brand_context: 'IPG Germany / CypCut',
     specs: [
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     name: 'W-NANO 1500W Smart',
     tagline: 'Hàn siêu nhanh, không cần thợ tay nghề cao.',
     description: 'Thiết kế nhỏ gọn tương đương một chiếc xe đẩy. Tích hợp màn hình cảm ứng điều khiển thông số hàn tự động.',
-    image: '/assets/images/products/f-weld-nano-1500.webp',
+    image: '/assets/images/products/f-weld-nano-1500.avif',
     price: '115,000,000đ',
     brand_context: 'MaxPhotonics / Qilin',
     specs: [
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     name: 'MARK-UV Cold Light 5W',
     tagline: 'Khắc trên nhựa và pha lê với công nghệ tia laser lạnh.',
     description: 'Không gây biến dạng nhiệt trên bề mặt vật liệu nhựa, gỗ mỏng, thủy tinh. Lý tưởng cho ngành dược phẩm và mỹ phẩm.',
-    image: '/assets/images/products/f-mark-uv-5.webp',
+    image: '/assets/images/products/f-mark-uv-5.avif',
     price: '185,000,000đ',
     brand_context: 'JPT / EzCad 3',
     specs: [
@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     name: 'Auto-Cell Robot Welding V1',
     tagline: 'Tự động hóa hoàn toàn dây chuyền hàn với Robot Fanuc.',
     description: 'Tích hợp cánh tay Robot 6 trục và nguồn laser công suất cao cho năng suất 24/7 không cần người vận hành.',
-    image: '/assets/images/products/f-sol-robot-cell.webp',
+    image: '/assets/images/products/f-sol-robot-cell.avif',
     price: 'Liên hệ tư vấn',
     brand_context: 'Fanuc / IPG / Mitsubishi PLC',
     specs: [
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Gia công ống tròn, vuông, elip với độ chính xác tuyệt đối.',
     description: 'Hệ thống gắp phôi tự động kết hợp đầu cắt quay 360 độ. Giải pháp tối ưu cho nội thất và kết cấu giàn giáo.',
     brand_context: 'Raycus / CypTube',
-    image: '/assets/images/products/f-cut-pipe-200.webp',
+    image: '/assets/images/products/f-cut-pipe-200.avif',
     price: '1,250,000,000đ',
     specs: [
       { label: 'Công suất', value: '3000W' },
@@ -131,7 +131,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Phục vụ sản xuất hàng loạt với độ ổn định vết hàn 99.9%.',
     description: 'Tích hợp nguồn laser công suất cao vào cánh tay Robot công nghiệp (ABB/Fanuc). Vết hàn ngấu sâu và cực kỳ thẩm mỹ.',
     brand_context: 'IPG / Yaskawa',
-    image: '/assets/images/products/f-weld-robot-arm.webp',
+    image: '/assets/images/products/f-weld-robot-arm.avif',
     price: 'Liên hệ',
     specs: [
       { label: 'Công suất', value: '2000W' },
@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
     tagline: 'Khắc deep-engraving và khắc màu đen trên nhôm.',
     description: 'Nguồn laser MOPA công suất lớn cho phép khắc sâu trên khuôn kim loại và đánh mác serial tốc độ cực cao.',
     brand_context: 'JPT M7 / EzCad',
-    image: '/assets/images/products/f-mark-mopa-100.webp',
+    image: '/assets/images/products/f-mark-mopa-100.avif',
     price: '145,000,000đ',
     specs: [
       { label: 'Công suất', value: '100W' },

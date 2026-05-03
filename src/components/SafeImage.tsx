@@ -16,14 +16,16 @@ export const SafeImage = ({ src, alt, className, priority = false, ...props }: S
 
   // Mapping local paths to remote fallbacks for preview stability
   const remoteFallbacks: Record<string, string> = {
-    '/assets/images/products/f-cut-v3-basic.webp': 'https://images.unsplash.com/photo-1565511394011-8240409da659?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-cut-pro-12kw.webp': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-weld-nano-1500.webp': 'https://images.unsplash.com/photo-1531280758014-11440590867f?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-mark-uv-5.webp': 'https://images.unsplash.com/photo-1617782635487-6e492d37651a?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-sol-robot-cell.webp': 'https://images.unsplash.com/photo-1590986440410-ad303d9f31f7?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-cut-pipe-200.webp': 'https://images.unsplash.com/photo-1590483734724-383b85ad05bd?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-weld-robot-arm.webp': 'https://images.unsplash.com/photo-1590986440410-ad303d9f31f7?auto=format&fit=crop&q=80&w=1200',
-    '/assets/images/products/f-mark-mopa-100.webp': 'https://images.unsplash.com/photo-1617782635487-6e492d37651a?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-cut-v3-basic.avif': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-cut-pro-12kw.avif': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-weld-nano-1500.avif': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-mark-uv-5.avif': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-sol-robot-cell.avif': 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-cut-pipe-200.avif': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-weld-robot-arm.avif': 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/f-mark-mopa-100.avif': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200',
+    '/assets/images/products/home-hero.avif': 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000',
+    '/assets/images/products/tech-fiber-vs-co2.avif': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200',
   };
 
   const currentSrc = retryWithFallback && remoteFallbacks[src] ? remoteFallbacks[src] : src;

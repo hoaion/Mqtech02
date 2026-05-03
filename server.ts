@@ -3,6 +3,7 @@ import { createServer as createViteServer } from "vite";
 import path from "path";
 import fs from "fs";
 import axios from "axios";
+import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -18,35 +19,44 @@ async function startServer() {
     fs.mkdirSync(uploadDir, { recursive: true });
   }
 
-  // API Route for Sideloading
-  app.get("/api/sideload", async (req, res) => {
-    const { url, name } = req.query;
-    if (!url || !name) {
-      return res.status(400).json({ error: "Missing url or name" });
+  // API Route cho Sideloading (SOP Implementation)
+  app.post("/api/sideload-image", express.json(), async (req, res) => {
+    const { imageUrl, fileName } = req.body;
+    
+    if (!imageUrl || !fileName) {
+      return res.status(400).json({ success: false, error: "Missing imageUrl or fileName" });
     }
 
     try {
-      const fileName = `${name}.webp`; // User requested webp, but since I can't convert easily without sharp, I'll save as is for now or use a basic stream
-      const filePath = path.join(uploadDir, fileName);
+      const outputName = `${fileName}.webp`;
+      const filePath = path.join(uploadDir, outputName);
 
+      // Fetch image
       const response = await axios({
-        url: url as string,
+        url: imageUrl,
         method: "GET",
-        responseType: "stream",
+        responseType: "arraybuffer",
       });
 
-      const writer = fs.createWriteStream(filePath);
-      response.data.pipe(writer);
+      const buffer = Buffer.from(response.data);
 
-      writer.on("finish", () => {
-        res.json({ success: true, path: `/assets/images/products/${fileName}` });
-      });
+      // Xử lý nén và chuyển đổi sang WebP
+      const optimizedBuffer = await sharp(buffer)
+        .webp({ quality: 80 })
+        .toBuffer();
 
-      writer.on("error", (err) => {
-        res.status(500).json({ error: err.message });
+      // Lưu vào thư mục public
+      fs.writeFileSync(filePath, optimizedBuffer);
+
+      console.log(`[Sideload] Saved: ${outputName}`);
+      
+      return res.json({ 
+        success: true, 
+        localUrl: `/assets/images/products/${outputName}` 
       });
-    } catch (error: any) {
-      res.status(500).json({ error: error.message });
+    } catch (err: any) {
+      console.error(`[Sideload Error] ${err.message}`);
+      return res.status(500).json({ success: false, error: err.message });
     }
   });
 

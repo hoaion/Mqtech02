@@ -12,7 +12,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-blue via-brand-blue/80 to-transparent z-10" />
           <SafeImage 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000" 
+            src="/assets/images/products/home-hero.webp" 
             className="w-full h-full object-cover"
             alt="Fiber Laser Industrial"
             priority

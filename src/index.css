@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+  
+  --color-brand-blue: #003366;
+  --color-brand-grey: #F5F5F7;
+  --color-brand-cyan: #00A4EF;
+  
+  --radius-fluent: 8px;
+  --radius-fluent-lg: 12px;
+}
+
+/* Fluent UI Effects */
+.mica-bg {
+  background: rgba(245, 245, 247, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mica-dark {
+  background: rgba(0, 51, 102, 0.82);
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fluent-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.acrylic {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+}
+
+/* Transitions */
+.reveal-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-effect:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-grey text-slate-900 selection:bg-brand-cyan/30;
+  }
+}
